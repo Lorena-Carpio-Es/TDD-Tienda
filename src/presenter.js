@@ -1,15 +1,8 @@
-import sumar from "./sumador";
+import mostrar from './mostrar.js';
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
-
-form.addEventListener("submit", (event) => {
+document.getElementById('dato-form').addEventListener('submit', function(event) {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const dato = document.getElementById('dato-input').value;
+  const resultado = mostrar(dato);
+  document.getElementById('resultado-div').textContent = `El dato ingresado es: ${resultado}`;
 });
